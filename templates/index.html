@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link href="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.js"></script>
+<div class="container-fluid px-4">
+    <h2 class="mt-4 mb-4 text-center">Расписание: Университетская школа 10 Б класс</h2>
+    <div class="row mb-4">
+        {% for day in timetable%}
+        <div class="col-2">
+            <table class="table table-responsive table-striped col-2">
+                <thead>
+                <tr>
+                    <th>{{day}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for lesson in timetable[day]%}
+                    <tr>
+                    <td>
+                        {{lesson}}
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link href="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.js"></script>
+<div class="container-fluid px-4">
+    <h2 class="mt-4 mb-4 text-center">Университетская школа {{class_}} класс</h2>
+    {% if temporary_timetable != 0 %}
+    <h4 class="text-center mb-4">Изменения в расписании</h4>
+    <div class="row mb-4">
+        {% for d_day in temporary_timetable %}
+        {% if d_day != 'DATE' %}
+        <div class="">
+            <table class="table table-responsive table-striped text-center col-md-12 col-lg-6 col-xxl-2 col-xl-4">
+                <thead>
+                <tr>
+                    <th>{{d_day}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for lesson in temporary_timetable[d_day]%}
+                    {% if lesson != "" %}
+                    <tr>
+                    <td class="table-warning">
+                        {{lesson}}
+                    </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    <h4 class="text-center mb-4">Основное расписание</h4>
+    <div class="row mb-4">
+        {% for day in timetable%}
+        <div class="col-md-12 col-lg-6 col-xxl-2 col-xl-4">
+            <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th>{{day}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for lesson in timetable[day]%}
+                    {% if lesson != "" %}
+                    <tr>
+                    <td>
+                        {{lesson}}
+                    </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+    <h2 class="mt-4 mb-4 text-center">Профиль пользователя {{name}} {{surname}}</h2>
+    <div class="row mb-4">
+        <div class="col-6">
+            <input class="form-control" type="text" placeholder={{surname}} readonly>
+        </div>
+        <div class="col-6">
+            <input class="form-control" type="text" placeholder={{name}} readonly>
+        </div>
+    </div>
+    <div class="text-center">
+        <div class="col-12">
+            {{form.email(class="form-control text-center", type="text", placeholder=email)}}
+        </div>
+        <div class="col-6 col-lg-4">{{form.class_(class="form-control text-center mt-4", type="text", placeholder="класс в формате 10Б - " + class_)}}</div>
+        <div class="col-12">
+            {{form.tg(class="form-control text-center mt-4", type="text", placeholder="tg id - " + tg)}}
+        </div>
+        <div class="text-center">получить telegram id можно написав боту @getmyid_bot</div>
+        <p>{{ form.submit(type="submit", class="btn btn-primary mt-4") }}</p>
+        {{message}}
+    </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Планируй свою жизнь</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="static/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./img/free-icon-contract-4481058.png" type="image/x-icon">
+</head>
+<body class="sb-nav-fixed">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-nav-blue">
+      <!-- Navbar Brand-->
+      <a class="navbar-brand ps-3" href="/">University school</a>
+      <!-- Sidebar Toggle-->
+      <button class="navbar-right btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+      <!-- Navbar-->
+      <ul class="navbar-nav ms-auto me-md-3 my-2 my-md-0">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  {% if current_user.is_authenticated %}
+                    <li><a class="dropdown-item" href="#!">{{ current_user.name }}</a></li>
+                    <li></li><a class="dropdown-item" href="/logout">Выход</a></li>
+                  {% else %}
+                    <li><a class="dropdown-item" href="/registration">Зарегистрироваться</a></li>
+                    <li><a class="dropdown-item" href="/login">Войти</a></li>
+                  {% endif %}
+              </ul>
+          </li>
+      </ul>
+  </nav>
+  <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+          <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+              <div class="sb-sidenav-menu">
+                  <div class="nav">
+                      {% if current_user.is_authenticated %}
+                      <div class="sb-sidenav-menu-heading">Профиль</div>
+                        <a class="nav-link" href="profile">
+                            <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
+                            Мои данные
+                        </a>
+                      {% endif %}
+                      <div class="sb-sidenav-menu-heading">Расписание</div>
+                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#timetable" aria-expanded="false" aria-controls="timetable">
+                          <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                          Уроков
+                          <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                      </a>
+                      <div class="collapse" id="timetable" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                          <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#jun_z" aria-expanded="false" aria-controls="jun_z">
+                                  Начальное звено
+                                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="jun_z" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="1a">1А</a>
+                                        <a class="nav-link" href="1b">1Б</a>
+                                        <a class="nav-link" href="2a">2А</a>
+                                        <a class="nav-link" href="2b">2Б</a>
+                                        <a class="nav-link" href="3a">3А</a>
+                                        <a class="nav-link" href="3b">3Б</a>
+                                        <a class="nav-link" href="3v">3В</a>
+                                        <a class="nav-link" href="4a">4А</a>
+                                        <a class="nav-link" href="4b">4Б</a>
+                                        
+                                    </nav>
+                                </div>
+                              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#midd_z" aria-expanded="false" aria-controls="midd_z">
+                                  Среднее звено
+                                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                    <div class="collapse" id="midd_z" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="5a">5А</a>
+                                            <a class="nav-link" href="5b">5Б</a>
+                                            <a class="nav-link" href="6a">6А</a>
+                                            <a class="nav-link" href="6b">6Б</a>
+                                            <a class="nav-link" href="7a">7А</a>
+                                            <a class="nav-link" href="7b">7Б</a>
+                                            <a class="nav-link" href="8a">8А</a>
+                                            <a class="nav-link" href="8b">8Б</a>
+                                            <a class="nav-link" href="9a">9А</a>
+                                        </nav>
+                                    </div>
+                              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#sen_z" aria-expanded="false" aria-controls="sen_z">
+                                  Старшее звено
+                                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                  <div class="collapse" id="sen_z" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="10a">10А</a>
+                                        <a class="nav-link" href="10b">10Б</a>
+                                        <a class="nav-link" href="11a">11А</a>
+                                    </nav>
+                                </div>
+                          </nav>
+                      </div>
+                        <a class="nav-link" href="call_schedule">
+                            <div class="sb-nav-link-icon"><i class="far fa-bell"></i></div>
+                            Звонков
+                        </a>
+                        <a class="nav-link" href="events">
+                            <div class="sb-nav-link-icon"><i class="far fa-handshake"></i></div>
+                            Внеклассных мероприятий
+                        </a>
+                  </div>
+              </div>
+              <div class="sb-sidenav-footer">
+                  <div class="small">Produced in:</div>
+                  University school IT class
+              </div>
+          </nav>
+      </div>
+      <div id="layoutSidenav_content">
+          <main>
+            {% block content %}{% endblock %}
+          </main>
+          <footer class="py-4 bg-light mt-auto">
+              <div class="container-fluid px-4">
+                  <div class="d-flex align-items-center justify-content-between small">
+                      <div class="text-muted">Copyright &copy; AlexMarticus 2022</div>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="static/js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+  <script src="static/assets/demo/chart-area-demo.js"></script>
+  <script src="static/assets/demo/chart-bar-demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+  <script src="static/js/datatables-simple-demo.js"></script>
+</body>
+</html>

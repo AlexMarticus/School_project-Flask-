@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link href="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.css" rel="stylesheet">
+<style>
+.table {
+    margin: 0 auto;
+    width: 80%;
+}
+</style>
+<script src="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.js"></script>
+<div class="container-fluid px-4">
+    <h2 class="mt-4 mb-4 text-center">Расписание звонков в Университетской школе</h2>
+    <h4 class="text-center mb-4">Основное расписание</h4>
+    <div class="mb-4">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th class="table-primary">7:45 - 8:00</th>
+                        <td class="">Пятнадцатиминутка (обсуждение новостей с классным руководителем)</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">8:00 - 8:45</th>
+                        <td class="table-info">Первый урок</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">8:45 - 9:00</th>
+                        <td class="">Столовая для каких-то там классов/Перемена</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">9:00 - 9:45</th>
+                        <td class="table-info">Второй урок</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">9:45 - 10:00</th>
+                        <td class="">Столовая для каких-то там классов/Перемена</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">10:00 - 10:45</th>
+                        <td class="table-info">Третий урок</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">10:45 - 11:00</th>
+                        <td class="">Столовая для каких-то там классов/Перемена</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">11:00 - 11:45</th>
+                        <td class="table-info">Четвёртый урок</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">11:45 - 12:00</th>
+                        <td class="">Столовая для 9-11 классов/Перемена</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">12:00 - 12:45</th>
+                        <td class="table-info">Пятый урок</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">12:45 - 12:50</th>
+                        <td class="">Перемена</td>
+                    </tr>
+                    <tr>
+                        <th class="table-primary">12:50 - 13:35</th>
+                        <td class="table-info">Шестой урок</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

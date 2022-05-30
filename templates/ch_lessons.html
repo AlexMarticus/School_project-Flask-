@@ -1,0 +1,92 @@
+{% extends "admin.html" %}
+
+{% block content %}
+<link href="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.js"></script>
+<div class="container-fluid px-4">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+    <h2 class="mt-4 mb-4 text-center form-group">Университетская школа {{form.class_}} класс</h2>
+    <h4>Если Вы желаете изменить расписание на 1 день, то впишите правки в 1ый столбик, как и название дня, и дату этого дня</h4>
+    <div class="col-12">{{ form.date }}</div>
+    <div class="row mb-4">
+        <div class="col-md-12 col-lg-6 col-xxl-2 col-xl-4">
+            <table class="table table-responsive table-striped">
+                <thead class="form-group">
+                <tr>
+                    <th>Понедельник<br>{{form.day}}</th>
+                    <th>Вторник</th>
+                    <th>Среда</th>
+                    <th>Четверг</th>
+                    <th>Пятница</th>
+                    <th>Суббота</th>
+                </tr>
+                </thead>
+                <tbody class="form-group">
+                    <tr>
+                        <td>{{form.mon1}}</td>
+                        <td>{{form.tue1}}</td>
+                        <td>{{form.wed1}}</td>
+                        <td>{{form.thu1}}</td>
+                        <td>{{form.fri1}}</td>
+                        <td>{{form.sat1}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.mon2}}</td>
+                        <td>{{form.tue2}}</td>
+                        <td>{{form.wed2}}</td>
+                        <td>{{form.thu2}}</td>
+                        <td>{{form.fri2}}</td>
+                        <td>{{form.sat2}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.mon3}}</td>
+                        <td>{{form.tue3}}</td>
+                        <td>{{form.wed3}}</td>
+                        <td>{{form.thu3}}</td>
+                        <td>{{form.fri3}}</td>
+                        <td>{{form.sat3}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.mon4}}</td>
+                        <td>{{form.tue4}}</td>
+                        <td>{{form.wed4}}</td>
+                        <td>{{form.thu4}}</td>
+                        <td>{{form.fri4}}</td>
+                        <td>{{form.sat4}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.mon5}}</td>
+                        <td>{{form.tue5}}</td>
+                        <td>{{form.wed5}}</td>
+                        <td>{{form.thu5}}</td>
+                        <td>{{form.fri5}}</td>
+                        <td>{{form.sat5}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.mon6}}</td>
+                        <td>{{form.tue6}}</td>
+                        <td>{{form.wed6}}</td>
+                        <td>{{form.thu6}}</td>
+                        <td>{{form.fri6}}</td>
+                        <td>{{form.sat6}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.mon7}}</td>
+                        <td>{{form.tue7}}</td>
+                        <td>{{form.wed7}}</td>
+                        <td>{{form.thu7}}</td>
+                        <td>{{form.fri7}}</td>
+                        <td>{{form.sat7}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">{{ form.is_constant }} Отметьте, если желаете изменить ПОСТОЯННОЕ расписание</div>
+        <div class="form-group">{{ form.submit(type="submit", class="btn btn-primary") }}</div>
+        {{message}}
+    </div>
+</form>
+</div>
+{% endblock %}

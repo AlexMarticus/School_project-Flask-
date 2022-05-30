@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link href="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.css" rel="stylesheet">
+<style>
+.table {
+    margin: 0 auto;
+    width: 80%;
+}
+</style>
+<script src="https://unpkg.com/bootstrap-table@1.20.1/dist/bootstrap-table.min.js"></script>
+<div class="container-fluid px-4">
+    <h2 class="mt-4 mb-4 text-center">Расписание внеклассных мероприятий в Университетской школе</h2>
+    <div class="mb-4">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="table-primary">Дата/время/место</th>
+                        <th class="table-primary">Название мероприятия</th>
+                        <th class="table-primary">Ответственный</th>
+                    </tr>
+                </thead>
+                {% for event in events%}
+                <tbody>
+                    <tr>
+                        <td class="table-primary">{{event["date_time_place"]}}</td>
+                        <td>{{event["name"]}}</td>
+                        <td>{{event["responsible"]}}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
