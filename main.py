@@ -88,7 +88,7 @@ def ch_lessons():
 7-{form.mon7.data}"""
         for i in class_.tg_s.split():
             i = int(i)
-            url1 = "https://api.telegram.org/bot5457122671:AAGlJPnZ2evD5qUtC9FW3L7wkhmOAbiAXnE/sendMessage?"
+            url1 = "https://api.telegram.org/bot[TOKEN]/sendMessage?"
             r1 = requests.post(url1, data={'chat_id': i, "text": text})
             if r1.status_code != 200:
                 pass
